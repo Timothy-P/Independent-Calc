@@ -5,24 +5,51 @@
             Ind Calc, Timothy-P
         </title>
         <script src="script.js"></script>
-        <link href="style.css" type="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
         <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
         <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href="styles.css">
+        <script>
+            $(document).ready(function(){
+                $('#Calc').draggable();
+            });
+        </script>
+        <meta charset="UTF-8">
+        <meta name="description" content="An independent calculator that only uses Jquery, made by Timothy-P.">
+        <meta name="keywords" content="HTML, CSS, JavaScript, Timothy-P">
+        <meta name="author" content="Timothy-P">
     </head>
     <body>
             <div id="Calc">
                 <input id="CalcInput">
-                <button>+</button>
-                <button>&#215;</button>
-                <button>&#247;</button>
-                <button>-</button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
+                <br>
+                <button style="top: 5%;left: -35%;" onclick="document.getElementById('CalcInput').value += '+'">+</button>
+                <button style="top: 16.5%;left: -41.7%;" onclick="document.getElementById('CalcInput').value += '&#215;'">&#215;</button>
+                <button style="top: 16.5%;left: -40%;" onclick="document.getElementById('CalcInput').value += '&#247;'">&#247;</button>
+                <button style="top: 5%;left: -46%;" onclick="document.getElementById('CalcInput').value += '-'">-</button>
+                <br>
+                <button style="top: -5%;left: 4%;" onclick="document.getElementById('CalcInput').value += '1'">1</button>
+                <button style="top: -5%;left: 5%;" onclick="document.getElementById('CalcInput').value += '2'">2</button>
+                <button style="top: -5%;left: 5%;" onclick="document.getElementById('CalcInput').value += '3'">3</button>
+                <button style="top: 7%;left: -15.2%;" onclick="document.getElementById('CalcInput').value += '4'">4</button>
+                <button style="top: 7%;left: -14.2%;" onclick="document.getElementById('CalcInput').value += '5'">5</button>
+                <button style="top: 7%;left: -14.2%;" onclick="document.getElementById('CalcInput').value += '6'">6</button>
+                <button style="top: 19%;left: -34.5%;" onclick="document.getElementById('CalcInput').value += '7'">7</button>
+                <button style="top: 19%;left: -33.5%;" onclick="document.getElementById('CalcInput').value += '8'">8</button>
+                <button style="top: 19%;left: -33.5%;" onclick="document.getElementById('CalcInput').value += '9'">9</button>
+                <button style="top: 30%;left: -46.2%;" onclick="document.getElementById('CalcInput').value += '0'">0</button>
+                <br>
+                <button style="top:8%;left: -40%;" onclick="Alpha()">=</button>
+                <br>
+                <button style="top: -24%;left: 10%;" onclick="document.getElementById('CalcInput').value += '&pi;'">&pi;</button>
             </div>
+            <noscript>
+                <p>
+                    It seems you are using a browser that doesn't support JavaScript. You'll need to get that fixed or this entire calculator <a>WILL NOT</a> work.<br>
+                    But since you have decided to look at something you likely knew would have JavaScript (because all of my projects include JavaScript) I'll copy and paste some dialogue from a good game, and I encourage you to figure it out using the text box below.<br>
+                    <input style="width: 100px;height: 100px;" placeholder="The joke is: you can't guess because you don't have JavaScript on your browser.">
+                </p>
+            </noscript>
     </body>
 </html>
