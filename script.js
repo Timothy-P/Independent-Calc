@@ -1,6 +1,7 @@
 var Equal;
-const divi = "÷"
-const multi = "×"
+const divi = "÷";
+const multi = "×";
+var round = 0;
 function Alpha() {
     try {
         if (document.getElementById("CalcInput").value == "0÷0") {
@@ -11,13 +12,28 @@ function Alpha() {
             alert("I accounted for that too. :)");
             history.go(0);
         }
-        else{
+        else if (round == 1) {
+            console.log("False equation: "+document.getElementById("CalcInput").value+" (rounded)");
+            document.getElementById("CalcInput").value = "Math.round("+document.getElementById("CalcInput").value+")";
+            document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.replaceAll("π", "Math.PI")
             document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.replaceAll("÷", "/");
-            console.log("Division symbols replaced.");
             document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.replaceAll("×", "*");
-            console.log("Multiplication symbols replaced.");
+            document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.replaceAll("^", "Math.exp");
+            document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.replaceAll("√", "Math.sqrt")
+            console.log("True equation: "+document.getElementById("CalcInput").value+" (rounded)");
             document.getElementById("CalcInput").value = eval(document.getElementById("CalcInput").value);
-            console.log("Equations solvd.");
+            console.log("Result: "+document.getElementById("CalcInput").value+" (rounded)");
+        }
+        else{
+            console.log("False equation: "+document.getElementById("CalcInput").value);
+            document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.replaceAll("π", "Math.PI")
+            document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.replaceAll("÷", "/");
+            document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.replaceAll("×", "*");
+            document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.replaceAll("^", "*Math.exp");
+            document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.replaceAll("√", "Math.sqrt")
+            console.log("True equation: "+document.getElementById("CalcInput").value);
+            document.getElementById("CalcInput").value = eval(document.getElementById("CalcInput").value);
+            console.log("Result: "+document.getElementById("CalcInput").value);
         }
     }
     catch (err) {
@@ -43,5 +59,15 @@ function Tools(cmd) {
     }
     else {
         return "Command not available, check your spelling or don't be searching for secrets."
+    }
+}
+function roundF() {
+    if (round == 1) {
+        round = 0;
+        document.getElementById("roundB").style.background = "red"
+    }
+    else {
+        round = 1
+        document.getElementById("roundB").style.background = "green"
     }
 }
