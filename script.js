@@ -132,5 +132,5 @@ function Randomize() {
     document.getElementById("resultR").value = RN
 }
 function DEL() {
-    document.getElementById("calcinput").value = document.getElementById("calcinput").value.slice(0, -1);
+    document.getElementById("CalcInput").value = document.getElementById("CalcInput").value.slice(0, -1);
 };
