@@ -6,6 +6,7 @@
     width: 470px;
     height: 300px;
     text-align: center;
+    cursor: all-scroll;
 }
 #Calc button {
     background-color: cornflowerblue;
@@ -14,6 +15,7 @@
     border: transparent;
     font-size: 1.5em;
     position: relative;
+    cursor: pointer;
 }
 #Calc input {
     background-color: darkgoldenrod;
@@ -21,6 +23,7 @@
     border-radius: 12px;
     border: transparent;
     font-size: 1.9em;
+    cursor: text;
 }
 #randomM {
     background-color: coral;
