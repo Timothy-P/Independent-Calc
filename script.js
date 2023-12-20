@@ -50,14 +50,14 @@ function Alpha() {
     }
 }
 function Tools(cmd) {
-    if (cmd == "clear") {
+    if (cmd == "clear", "Clear") {
         document.getElementById("CalcInput").value = "";
     }
     else if (cmd == "0/0") {
         document.getElementById("CalcInput").value = "👎";
         alert("Haha, very funny.");
     }
-    else if (cmd == "down") {
+    else if (cmd == "down", "Down") {
         alert("I accounted for that too. :)");
         history.go(0);
     }
