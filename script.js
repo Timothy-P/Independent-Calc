@@ -147,8 +147,94 @@ function DEL() {
 
 
 // Average maker, yay...
-AverIC = 5;
+var AverIC = 2;
+var AverIC2 = 2;
+var Total = 1;
 function Add() {
-    $("#Aver").append('<input id="AverI'+AverIC+'"')
+    $("#Aver").append('<input id="AverI'+AverIC+'">')
     AverIC += 1
 }
+function AvCalc() {
+    console.log("AvCalc triggered.")
+    while (AverIC > AverIC2) {
+        console.log("AvCalc while loop triggered.")
+        if (AverIC2 < AverIC) {
+            console.log("AvCalc while > if triggered.")
+            AverIC3 = "AverI"+AverIC2
+            Total = eval(document.getElementById(AverIC3).value+Total);
+            AverIC2 += 1;
+            if (AverIC2 < AverIC) {
+                console.log("AvCalc while > else triggered.")
+                Total = eval(Total/AverIC);
+                if (window.confirm("Do you want to copy the result?") == true) {
+                    navigator.clipboard.writeText(Total);
+                    AverIC2 = 2;
+                    return
+                }
+                else {
+                    alert("The answer is:\n"+Total);
+                    AverIC2 = 2;
+                    return
+                };
+            };
+        };
+    };
+    if (AverIC == 2) {
+        alert("You need more fields to get an answer.")
+    }
+};
+function AvCalc2() {
+    AvCalc2 = AvCalc
+    while (AvCalc > 5) {
+        AvResult = eval(AvResult+document.getElementById("AverI"+AverIC2+""))
+        AverIC2 = eval(AverIC2-1) 
+    }
+}
+
+
+
+
+/*
+if (document.getElementById("AverI3").value == "" && document.getElementById("AverI4").value == "" && document.getElementById("AverI2").value != "" && document.getElementById("AverI1") != "") {
+    AvResult = eval((document.getElementById("AverI1").value+document.getElementById("AverI2").value)/2)
+    AvResultWin = window.open("", "MsgWindow", "")
+    AvResultWin.document.write("<p>"+AvResult+"</p>")
+}
+else if (document.getElementById("AverI3").value == "" && document.getElementById("AverI4").value == "" && document.getElementById("AverI2").value != "" && document.getElementById("AverI1") == "") {
+    alert("Please fill in more than 1 field.")
+}
+
+else if (document.getElementById("AverI3").value == "" && document.getElementById("AverI4").value == "" && document.getElementById("AverI2").value == "" && document.getElementById("AverI1") != "") {
+    alert("Please fill in more than 1 field.");
+}
+else if (document.getElementById("AverI3").value != "" && document.getElementById("AverI4").value == "" && document.getElementById("AverI2") == "" && document.getElementById("AverI1") != "") {
+    AvResult = eval((document.getElementById("AverI1").value+document.getElementById("AverI4").value)/2)
+    AvResultWin = window.open("", "MsgWindow", "")
+    AvResultWin.document.write("<p>"+AvResult+"</p>")
+}
+else if (document.getElementById("AverI3").value != "" && document.getElementById("AverI4").value == "" && document.getElementById("AverI2") != "" && document.getElementById("AverI1") != "") {
+    AvResult = eval((document.getElementById("AverI1").value+document.getElementById("AverI2").value+document.getElementById("AverI4").value)/3)
+    AvResultWin = window.open("", "MsgWindow", "")
+    AvResultWin.document.write("<p>"+AvResult+"</p>")
+}
+else if (document.getElementById("AverI3").value == "" && document.getElementById("AverI4").value != "" && document.getElementById("AverI2") == "" && document.getElementById("AverI1") != "") {
+    AvResult = eval((document.getElementById("AverI1").value+document.getElementById("AverI3").value)/2)
+    AvResultWin = window.open("", "MsgWindow", "")
+    AvResultWin.document.write("<p>"+AvResult+"</p>")
+}
+else if (document.getElementById("AverI3").value == "" && document.getElementById("AverI4").value != "" && document.getElementById("AverI2") != "" && document.getElementById("AverI1") != "") {
+    AvResult = eval((document.getElementById("AverI1").value+document.getElementById("AverI3").value+document.getElementById("AverI2").value)/3)
+    AvResultWin = window.open("", "MsgWindow", "")
+    AvResultWin.document.write("<p>"+AvResult+"</p>")
+}
+else if (document.getElementById("AverI3").value == "" && document.getElementById("AverI4").value == "" && document.getElementById("AverI2").value != "" && document.getElementById("AverI1") != "") {
+    AvResult = eval((document.getElementById("AverI1").value+document.getElementById("AverI2").value+document.getElementById("AverI4").value+document.getElementById("AverI3").value)/4)
+    AvResultWin = window.open("", "MsgWindow", "")
+    AvResultWin.document.write("<p>"+AvResult+"</p>")
+}
+else if (document.getElementById("AverI3").value == "" && document.getElementById("AverI4").value == "" && document.getElementById("AverI2").value == "" && document.getElementById("AverI1") != "") {
+    AvResult = eval((document.getElementById("AverI1").value+document.getElementById("AverI2").value+document.getElementById("AverI4").value+document.getElementById("AverI3").value)/2)
+    AvResultWin = window.open("", "MsgWindow", "")
+    AvResultWin.document.write("<p>"+AvResult+"</p>")
+}
+*/

@@ -59,9 +59,11 @@
     border-radius: 12px;
     position: relative;
     width: 470px;
-    height: 300px;
+    max-height: 300px;
     text-align: center;
     cursor: all-scroll;
+    overflow: scroll;
+    padding: auto;
 }
 #Aver button {
     background-color: cornflowerblue;
@@ -69,8 +71,9 @@
     border-radius: 12px;
     border: transparent;
     font-size: 1.5em;
-    position: relative;
+    position: sticky;
     cursor: pointer;
+    top: 0px;
 }
 #Aver input {
     background-color: darkgoldenrod;
