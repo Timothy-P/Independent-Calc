@@ -166,7 +166,8 @@ function AvCalc() {
             if (AverIC2 < AverIC) {
                 console.log("AvCalc while > else triggered.")
                 Total = eval(Total/AverIC);
-                if (window.confirm("Do you want to copy the result?") == true) {
+                if (window.confirm("Do you want to copy the result?") == 1) {
+                    console.log("Copy event triggered.")
                     navigator.clipboard.writeText(Total);
                     AverIC2 = 2;
                     return
@@ -189,7 +190,10 @@ function AvCalc2() {
         AvResult = eval(AvResult+document.getElementById("AverI"+AverIC2+""))
         AverIC2 = eval(AverIC2-1) 
     }
-}
+};
+window.addEventListener("DOMContentLoaded", function() {
+    this.alert("As you may guess, a new feature includes new bugs.\n\nI'm letting anyone have the average creator, but you have to be aware that I'm having issues with it. You're better off using the regular calculator becuase of how buggy the project is.")
+})
 
 
 
