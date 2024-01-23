@@ -61,12 +61,6 @@ function Tools(cmd) {
         alert("I accounted for that too. :)");
         history.go(0);
     }
-    else if (cmd == "Aver", "aver") {
-        $("body").append('<div id="Aver"><button onclick="Add()">Add more</button><input id="AverI1"><input id="AverI2"><input id="AverI3"><input id="AverI4"></div>')
-        $(document).ready(function(){
-            $('#Aver').draggable();
-        });
-    }
     else if (cmd == "") {
         alert("These are my tools.\nGet out of the console and use my calculator properly.");
         history.go(0)
